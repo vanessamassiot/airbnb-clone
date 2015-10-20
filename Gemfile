@@ -30,6 +30,7 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'puma'
 gem 'aws-sdk'
+gem 'slim'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
