@@ -8,3 +8,10 @@
 <li><strong>Postcode:</strong> <%= @flat.postcode %></li>
 <li><strong>Price:</strong> <%= @flat.price %></li>
 </ul>
+
+<%=link_to flats_path(@flat) do%>
+  <button type="button" class="btn btn-primary">return list of flat</button>
+<%end%>
+
+
+
