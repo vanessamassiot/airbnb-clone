@@ -2,7 +2,13 @@
 
 <% @flats.each do |flat| %>
   <ul>
-    <li><strong>Title:</strong><%= flat.title%></li>
+    <li><strong>Title:</strong>
+      <%= link_to flat_path(flat) do %>
+      <%= flat.title %>
+      <% end %>
+    </li>
     <li><strong>Price:</strong><%= flat.price%></li>
   </ul>
 <% end %>
+
+
