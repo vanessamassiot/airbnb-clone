@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  # root to: 'xx#yy'
+  root to: 'pages#home'
 
   resources :flats, only: [:index, :show] do
     resources :bookings, only: [:new, :create, :show]
@@ -15,4 +15,3 @@ Rails.application.routes.draw do
     resources :flats,     only: [:index, :show, :new, :create]
   end
 end
-
