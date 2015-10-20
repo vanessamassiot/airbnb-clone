@@ -1,0 +1,12 @@
+<h1> My Booking </h1>
+  <h2> Mes dates de séjour :</h2>
+  <p><%= @booking.checkin %></p>
+  <p><%= @booking.checkout %></p>
+  <h2> Mon logement :</h2>
+  <p><%= @booking.flat.title %></p>
+  <p><%= @booking.flat.description %></p>
+  <p><%= @booking.flat.city %></p>
+  <p><%= @booking.flat.price %> $ </p>
+  <%= link_to "my bookings index", account_bookings_path %>
+
+

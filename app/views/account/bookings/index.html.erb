@@ -1,0 +1,10 @@
+<h1> List of my Bookings </h1>
+<% @bookings.each do |book| %>
+  <p><%= book.checkin %></p>
+  <p><%= book.checkout %></p>
+  <p><%= book.flat.title %></p>
+  <p><%= book.flat.city %></p>
+  <p><%= book.flat.price %> $ </p>
+  <p> ------------------------ </p>
+<% end %>
+
