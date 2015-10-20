@@ -1,0 +1,8 @@
+<h1>All Flats</h1>
+
+<% @flats.each do |flat| %>
+  <ul>
+    <li><strong>Title:</strong><%= flat.title%></li>
+    <li><strong>Price:</strong><%= flat.price%></li>
+  </ul>
+<% end %>
