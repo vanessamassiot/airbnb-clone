@@ -2,4 +2,8 @@
 <% @flats.each do |flat| %>
   <h2><%= flat.title %></h2>
   <p><%= flat.description %></p>
+  <p><% flat.bookings.each do |b|%>
+    <%= b.status %>
+    <% end %>
+  </p>
 <% end %>
