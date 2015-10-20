@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :flats, only: [:new, :create, :index, :show] do
-    resources :bookings, only: [:new, :create, :destroy, :show]
+
+  # root to: 'xx#yy'
+
+  resources :flats, only: [:index, :show] do
+    resources :bookings, only: [:new, :create, :show]
   end
-  resources :users, only: [:show] do
-    resources :bookings, only: [:index]
-  end
-  resources :users, only: [:show] do
-    resources :flats, only: [:index]
+
+  namespace :account do
+    resource :dashboard,  only: [:show]
+    resource :profile,    only: [:edit, :update]
+
+    resources :bookings,  only: [:index, :show]
+    resources :flats,     only: [:index, :show, :new, :create]
   end
 end
 
