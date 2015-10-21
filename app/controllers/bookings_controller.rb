@@ -15,7 +15,10 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
 
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   private

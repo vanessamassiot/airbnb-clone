@@ -1,0 +1,12 @@
+<h1> Confirm the booking of your flat </h1>
+
+<%= form_for @booking, url: account_booking_path(@booking), html: { class: "nifty_form" } do |b| %>
+  <%= b.radio_button(:status, "confirmed") %>
+  <%= label_tag(:status_confirmed, "I accept this booking") %>
+  <%= b.radio_button(:status, "refused") %>
+
+  <%#= radio_button_tag(:status, "confirmé") %>
+  <%#= radio_button_tag(:status, "refusé") %>
+  <%= label_tag(:status_refused, "I refuse this booking") %>
+  <%= b.submit "Edit" %>
+<% end %>

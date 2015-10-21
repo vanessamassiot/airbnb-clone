@@ -32,8 +32,14 @@ gem 'puma'
 gem 'aws-sdk'
 gem 'slim'
 gem 'jquery-turbolinks'
+gem 'geocoder'
+gem 'gmaps4rails'
 gem 'omniauth-facebook'
 gem 'omniauth-oauth2', '1.3.1'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-underscore'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

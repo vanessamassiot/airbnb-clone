@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resource :dashboard,  only: [:show]
     resource :profile,    only: [:edit, :update]
 
-    resources :bookings,  only: [:index, :show]
+    resources :bookings,  only: [:index, :show, :edit, :update]
     resources :flats,     only: [:index, :show, :new, :create]
   end
 end

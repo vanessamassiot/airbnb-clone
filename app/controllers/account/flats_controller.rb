@@ -22,12 +22,6 @@ module Account
     def show
     end
 
-    def confirm_booking
-      @booking = Flat.bookings.first
-      @booking.status = "confirmée"
-      @booking.status.save
-    end
-
     private
 
     def flat_params
