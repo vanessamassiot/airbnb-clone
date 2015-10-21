@@ -6,15 +6,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new (booking_params)
-    @booking[:client_id] = current_user.id
-    @booking[:flat_id] = @flat.id
-    @booking[:status] = "envoyée"
-    if @booking.valid?
-      @booking.save
+    @booking = @flat.bookings.new(booking_params)
+    @booking.client = current_user
+    @booking.status = "envoyée"
+
+    if @booking.save # valid? + commit db
       redirect_to account_booking_path(@booking)
     else
-      raise
       render :new
     end
 

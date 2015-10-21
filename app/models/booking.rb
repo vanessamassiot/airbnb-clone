@@ -4,5 +4,6 @@ class Booking < ActiveRecord::Base
 
   validates_presence_of :checkin, :checkout, :status, :client_id, :flat_id
   validates :status, inclusion: { in: ["envoyée", "confirmée", "refusée"], allow_nil: false }
+  # sent, confirmed, refused
 
 end

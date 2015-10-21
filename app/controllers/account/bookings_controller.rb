@@ -5,7 +5,7 @@ module Account
     end
 
     def show
-      @booking = Booking.find(params[:id])
+      @booking = current_user.bookings.find(params[:id])
     end
   end
 end
