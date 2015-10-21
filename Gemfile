@@ -32,6 +32,7 @@ gem 'puma'
 gem 'aws-sdk'
 gem 'slim'
 gem 'jquery-turbolinks'
+gem 'geocoder'
 
 
 # Use ActiveModel has_secure_password
