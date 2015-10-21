@@ -32,7 +32,8 @@ gem 'puma'
 gem 'aws-sdk'
 gem 'slim'
 gem 'jquery-turbolinks'
-
+gem 'omniauth-facebook'
+gem 'omniauth-oauth2', '1.3.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
