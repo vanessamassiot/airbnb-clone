@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :flats, only: [:index, :show] do
-    resources :bookings, only: [:new, :create, :show]
+    resources :bookings, only: [:new, :create, :show, :edit]
   end
 
   namespace :account do
