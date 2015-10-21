@@ -5,9 +5,11 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :beds %>
-  <%= f.input :street %>
-  <%= f.input :city %>
-  <%= f.input :postcode %>
+  <input class="pretty-field" id="user_input_autocomplete_address" type="text" placeholder="Adress">
+  <input id="street_number" type="hidden" name="street_number" disabled>
+  <input id="route" type="hidden" name="route" disabled>
+  <input id="locality" type="hidden" name="locality" disabled>
+  <input id="country" type="hidden" name="country" disabled>
   <%= f.input :price %>
   <%= f.submit "enregistrer" %>
 <% end %>
