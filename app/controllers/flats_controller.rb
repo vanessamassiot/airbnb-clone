@@ -3,10 +3,11 @@ class FlatsController < ApplicationController
     @flats = Flat.all
 
     # Let's DYNAMICALLY build the markers for the view.
-    @markers = Gmaps4rails.build_markers(@flats) do |flat, marker|
+    @hash = Gmaps4rails.build_markers(@flats) do |flat, marker|
       marker.lat flat.latitude
       marker.lng flat.longitude
-      end
+      marker.infowindow render_to_string(:partial => "/flats/map_box", locals: {flat: flat})
+    end
   end
 
   def show
