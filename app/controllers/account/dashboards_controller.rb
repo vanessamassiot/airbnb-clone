@@ -1,6 +1,5 @@
 module Account
-  class DashboardsController < ApplicationController
-    before_action :authenticate_user!
+  class DashboardsController < Account::Base
     def show
     end
   end

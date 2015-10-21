@@ -1,7 +1,5 @@
 module Account
-  class FlatsController < ApplicationController
-    before_action :authenticate_user!
-
+  class FlatsController < Account::Base
     def index
       @flats = current_user.flats
     end
