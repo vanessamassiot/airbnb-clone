@@ -1,9 +1,6 @@
 <h1> List of my Bookings </h1>
 <% @bookings.each do |book| %>
-  <p><%= book.checkin %></p>
-  <p><%= book.checkout %></p>
-  <p><%= book.flat.title %></p>
-  <p><%= book.flat.city %></p>
-  <p><%= book.flat.price %> $ </p>
+  <p>du <%= book.checkin %> au <%= book.checkout %></p>
+  <p><%= link_to book.flat.title, account_booking_path(book) %></p>
   <p> ------------------------ </p>
 <% end %>
