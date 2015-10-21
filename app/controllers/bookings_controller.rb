@@ -9,15 +9,17 @@ class BookingsController < ApplicationController
     @booking = Booking.new (booking_params)
     @booking[:client_id] = current_user.id
     @booking[:flat_id] = @flat.id
-    @booking[:status] = "envoyée"
+    @booking[:status] = "send"
     if @booking.valid?
       @booking.save
       redirect_to account_booking_path(@booking)
     else
-      raise
       render :new
     end
+  end
 
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   private

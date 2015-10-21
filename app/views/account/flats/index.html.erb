@@ -4,9 +4,7 @@
   <p><%= flat.description %></p>
   <p><% flat.bookings.each do |b|%>
     <%= b.status %>
-    <%= link_to "Confirm", account_flats_path,
-      method: :confirm_booking,
-      data: { confirm: "Are you sure?" } %>
+    <%= link_to "Confirmer/Annuler", edit_account_booking_path(b)%>
     <% end %>
   </p>
 <% end %>
