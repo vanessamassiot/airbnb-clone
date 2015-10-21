@@ -1,40 +1,71 @@
 <nav class="navbar-wagon">
-  <div class="container navbar-wagon-container">
+  <div class="mini-container navbar-wagon-container">
 
-    <a href="">
-      <%= image_tag "logo.png", class: "navbar-wagon-logo" %>
-    </a>
+      <div class="dropdown visible-xs">
+        <%= image_tag "menu.png", class: "dropdown-toggle navbar-wagon-logo", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-left" id="burger">
+          <li>
+            <%= link_to ('/'), class: "navbar-wagon-item navbar-wagon-link" do %>
+            <%= t ".home", default: "Home" %>
+            <% end %>
+          </li>
+          <li>
+          <%= link_to new_account_flat_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+            <%= t ".flat", default: "Register your flat" %>
+          <% end %>
+          </li>
+          <li role="separator" class="divider"></li>
+          <li class="dropdown-header">Where do you wanna go ?</li>
+          <form id="whole-form" action="">
+            <li><input id="menu-field" type="text" placeholder="City"></li>
+            <button type="submit" id="loupe">
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+        </ul>
+      </div>
+      <a href="/">
+        <%= image_tag "logo.png", class: "navbar-wagon-logo hidden-xs" %>
+      </a>
 
-    <div class="navbar-wagon-pusher"></div>
+
+
 
     <form action="" class="navbar-wagon-search hidden-xs">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Where do you want to go ?">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
     </form>
 
+    <%= link_to "Register your flat", new_account_flat_path, class: "navbar-wagon-item navbar-wagon-link hidden-xs" %>
+
+
     <% if user_signed_in? %>
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to account_dashboard_path do %>
-                <i class="fa fa-user"></i> <%= t ".profile", default: "My dashboard" %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <%= link_to account_dashboard_path do %>
+            <i class="fa fa-user"></i> <%= t ".profile", default: "My dashboard" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
+            <% end %>
+          </li>
+        </ul>
       </div>
+    </div>
     <% else %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 </nav>
+
+
+
+
 
