@@ -15,5 +15,9 @@
 <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
 <%= javascript_include_tag "application" %>
 <%= yield(:after_js) %>
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyBF4fXRhk7tTI4F7I7vMXv_KnHGkU1-M7M">
+</script>
+<script type="text/javascript" src="autocomplete.js"></script>
 </body>
 </html>
