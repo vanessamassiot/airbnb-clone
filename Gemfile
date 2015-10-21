@@ -33,6 +33,10 @@ gem 'aws-sdk'
 gem 'slim'
 gem 'jquery-turbolinks'
 gem 'geocoder'
+gem 'gmaps4rails'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-underscore'
+end
 
 
 # Use ActiveModel has_secure_password
