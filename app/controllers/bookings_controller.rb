@@ -8,9 +8,9 @@ class BookingsController < ApplicationController
   def create
     @booking = @flat.bookings.new(booking_params)
     @booking.client = current_user
-    @booking.status = "envoyée"
+    @booking.status = "send"
 
-    if @booking.save # valid? + commit db
+    if @booking.save
       redirect_to account_booking_path(@booking)
     else
       render :new
