@@ -1,7 +1,7 @@
 class FlatsController < ApplicationController
   def index
     @flats    = Flat.all
-    geo_flats = @flats.not.where(latitude: nil, longitude: nil)
+    geo_flats = @flats.where.not(latitude: nil, longitude: nil)
 
     # Let's DYNAMICALLY build the markers for the view.
     @hash = Gmaps4rails.build_markers(geo_flats) do |flat, marker|
