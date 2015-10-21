@@ -7,7 +7,6 @@ module Account
 
     def new
       @flat = current_user.flats.build
-
     end
 
     def create
@@ -21,7 +20,6 @@ module Account
     end
 
     def show
-
     end
 
     private
@@ -29,8 +27,5 @@ module Account
     def flat_params
       params.require(:flat).permit(:title, :description, :beds, :street, :city, :postcode, :price)
     end
-
-
   end
 end
-# current_user.id

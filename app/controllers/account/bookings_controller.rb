@@ -23,7 +23,6 @@ module Account
 
     def booking_params
        params.require(:booking).permit(:status)
-
     end
   end
 end
