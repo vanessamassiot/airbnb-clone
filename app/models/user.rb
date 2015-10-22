@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  devise :omniauthable, omniauth_providers: [:facebook]
+  devise :omniauthable, omniauth_providers: [:facebook], :confirmable
 
   has_many :flats,    foreign_key: "owner_id", dependent: :destroy
   has_many :bookings, foreign_key: "client_id", dependent: :destroy
