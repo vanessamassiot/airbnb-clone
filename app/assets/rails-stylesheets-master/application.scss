@@ -2,17 +2,18 @@
 @import "config/variables";
 @import "config/bootstrap_variables";
 
+// Your CSS
+@import "layout/index";
+@import "components/index";
+@import "pages/index";
+@import "vendor/index";
+
 // External libraries
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Your CSS
-@import "layout/index";
-@import "components/index";
-@import "pages/index";
-@import "vendor/index";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
