@@ -3,11 +3,14 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
   devise :omniauthable, omniauth_providers: [:facebook]
 
   has_many :flats,    foreign_key: "owner_id", dependent: :destroy
   has_many :bookings, foreign_key: "client_id", dependent: :destroy
+
   after_create :send_welcome_email
+
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/,
     message: "email non valide" }
