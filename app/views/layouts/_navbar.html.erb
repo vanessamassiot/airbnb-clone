@@ -18,7 +18,7 @@
           <li class="dropdown-header">Where do you wanna go ?</li>
             <form id="whole-form" action="">
             <li>
-              <input class="pretty-field" id="user_input_autocomplete_address" type="text" placeholder="City">
+              <input class="pretty-field" name= "address" id="user_input_autocomplete_address_mobile" type="text" placeholder="City">
               <input id="street_number" type="hidden" name="street_number" disabled>
               <input id="route" type="hidden" name="route" disabled>
               <input id="locality" type="hidden" name="locality" disabled>
@@ -34,11 +34,8 @@
         <%= image_tag "logo.png", class: "navbar-wagon-logo hidden-xs" %>
       </a>
 
-
-
-
-    <form action="" class="navbar-wagon-search hidden-xs">
-      <input type="text" id="user_input_autocomplete_address" class="navbar-wagon-search-input" placeholder="Where do you want to go ?">
+    <form action="/flats" class="navbar-wagon-search hidden-xs">
+      <input type="text" name= "address"id="user_input_autocomplete_address_desktop" class="navbar-wagon-search-input" placeholder="Where do you want to go ?">
       <input id="street_number" type="hidden" name="street_number" disabled>
       <input id="route" type="hidden" name="route" disabled>
       <input id="locality" type="hidden" name="locality" disabled>
