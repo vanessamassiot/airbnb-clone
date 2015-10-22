@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20151022133320) do
     t.datetime "updated_at",  null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "full_adress"
   end
 
   add_index "flats", ["owner_id"], name: "index_flats_on_owner_id", using: :btree

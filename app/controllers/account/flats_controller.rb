@@ -12,8 +12,10 @@ module Account
       @flat = current_user.flats.build(flat_params)
 
       if @flat.save
+        flash[:notice] = "Votre bien a bien été ajouté, bravo !!"
         redirect_to account_flats_path
       else
+        flash[:alert] = "oups ça merdouille, merci de recommencer"
         render :new
       end
     end
