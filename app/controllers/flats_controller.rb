@@ -1,6 +1,12 @@
 class FlatsController < ApplicationController
   def index
-    @flats    = Flat.all
+    if params[:address]== nil
+     @flats    = Flat.all
+   else
+     address_elements = params[:address].split(', ')
+     @flats = Flat.where(city: address_elements[-2])
+   end
+
     geo_flats = @flats.where.not(latitude: nil, longitude: nil)
 
     # Let's DYNAMICALLY build the markers for the view.
