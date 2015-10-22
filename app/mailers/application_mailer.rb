@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "bonjour@thebestairbnb.com"
+  default from: "stquentin@fleursnature.fr"
   layout 'mailer'
 end
