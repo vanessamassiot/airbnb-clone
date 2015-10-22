@@ -11,8 +11,10 @@ class BookingsController < ApplicationController
     @booking.status = "send"
 
     if @booking.save
+      flash[:notice] = "Votre demande de réservation a bien été envoyée au propriétaire"
       redirect_to account_booking_path(@booking)
     else
+      flash[:alert] = "oups ça merdouille, merci de recommencer"
       render :new
     end
   end
