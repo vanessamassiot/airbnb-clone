@@ -16,9 +16,13 @@
           </li>
           <li role="separator" class="divider"></li>
           <li class="dropdown-header">Where do you wanna go ?</li>
-            <form id="whole-form" action="/flats">
+            <form id="whole-form" action="">
             <li>
-              <input class="pretty-field" name= "address" id="user_input_autocomplete_address_mobile" type="text" placeholder="City">
+              <input class="pretty-field" id="user_input_autocomplete_address_mobile" type="text" placeholder="City">
+              <input id="street_number" type="hidden" name="street_number" disabled>
+              <input id="route" type="hidden" name="route" disabled>
+              <input id="locality" type="hidden" name="locality" disabled>
+              <input id="country" type="hidden" name="country" disabled>
             </li>
             <button type="submit" id="loupe">
               <i class="fa fa-search"></i>
@@ -30,13 +34,20 @@
         <%= image_tag "logo.png", class: "navbar-wagon-logo hidden-xs" %>
       </a>
 
-    <form action="/flats" class="navbar-wagon-search hidden-xs">
-      <input type="text" name= "address"id="user_input_autocomplete_address_desktop" class="navbar-wagon-search-input" placeholder="Where do you want to go ?">
 
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
+
+
+      <form action = 'flats' class="navbar-wagon-search hidden-xs">
+        <input type="text" id="user_input_autocomplete_address_desktop" class="navbar-wagon-search-input"  name="complete_adress" placeholder="Where do you want to go ?">
+        <input id="street_number" type="hidden" name="street_number" disabled>
+        <input id="route" type="hidden" name="route" disabled>
+        <input id="locality" type="hidden" name="locality" disabled>
+        <input id="country" type="hidden" name="country" disabled>
+        <button type="submit" class="navbar-wagon-search-btn">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+
 
     <%= link_to "Register your flat", new_account_flat_path, class: "navbar-wagon-item navbar-wagon-link hidden-xs" %>
 
@@ -64,11 +75,5 @@
     <% end %>
   </div>
 </nav>
-
-
-
-
-
-
 
 
