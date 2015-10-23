@@ -28,7 +28,6 @@ gem 'paperclip'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'devise'
-gem 'puma'
 gem 'aws-sdk'
 gem 'slim'
 gem 'jquery-turbolinks'
@@ -51,6 +50,7 @@ end
 # gem 'capistrano-rails', group: :development
 
 group :production do
+  gem 'puma'
   gem 'rails_12factor'
 end
 
