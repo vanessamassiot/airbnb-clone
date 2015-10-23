@@ -1,27 +1,49 @@
-<h1>All Flats</h1>
+<div class="banner text-center" style="background-image: url('https://unsplash.it/1000/500?image=40')">
+  <div class="banner-gradient"></div>
+  <div class="banner-content">
+    <h1>Si t'as du flair tu vas réserver</h1>
+  </div>
+</div>
 
-<% @flats.each do |flat| %>
-  <ul>
-    <li><strong>Title:</strong>
-      <%= link_to flat_path(flat) do %>
-      <%= flat.title %>
+<div class="container">
+
+    <div class="row">
+      <div class="home"><h2>Toutes nos locations pour les gens qui ont du blé</h2></div>
+      <% @flats.each do |flat| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="..." alt="...">
+          <div class="caption">
+            <ul>
+              <li><strong>Title:</strong>
+                <%= link_to flat_path(flat) do %>
+                <%= flat.title %>
+                <% end %>
+              </li>
+              <li><strong>Price:</strong><%= flat.price%></li>
+            </ul>
+            <p><%= link_to "Consulter ce logement", flat_path(flat), class:"btn btn-primary" %></p>
+          </div>
+        </div>
+      </div>
+
       <% end %>
-    </li>
-    <li><strong>Price:</strong><%= flat.price%></li>
-  </ul>
-<% end %>
+    </div>
+
+</div>
+
 
 <div id="map" style="width: 100%; height: 400px;"></div>
 
 <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).on('ready', function() {
-      handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function(){
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-      });
-    })
-  <% end %>
+<%= javascript_tag do %>
+$(document).on('ready', function() {
+handler = Gmaps.build('Google');
+handler.buildMap({ internal: { id: 'map' } }, function(){
+markers = handler.addMarkers(<%= raw @hash.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+});
+})
+<% end %>
 <% end %>
