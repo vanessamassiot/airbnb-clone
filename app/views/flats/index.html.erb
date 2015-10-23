@@ -6,28 +6,28 @@
 </div>
 
 <div class="container">
-    <div class="row">
-      <div class="home"><h2>Toutes nos locations pour les gens qui ont du blé</h2></div>
-      <% @flats.each do |flat| %>
-      <div class="col-xs-4 col-md-6">
-        <div class="thumbnail">
-          <%= image_tag flat.picture.url(:medium) %>
-          <div class="caption">
-            <ul>
-              <li><strong>Title</strong>
-                <%= link_to flat_path(flat) do %>
-                <%= flat.title %>
-                <% end %>
-              </li>
-              <li><strong>Price:</strong><%= flat.price%></li>
-            </ul>
-            <p><%= link_to "Consulter ce logement", flat_path(flat), class:"btn btn-primary" %></p>
-          </div>
+  <div class="row">
+    <div class="home"><h2>Toutes nos locations pour les gens qui ont du blé</h2></div>
+    <% @flats.each do |flat| %>
+    <div class="col-xs-4 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag flat.picture.url(:medium) %>
+        <div class="caption">
+          <ul>
+            <li><strong>Title</strong>
+              <%= link_to flat_path(flat) do %>
+              <%= flat.title %>
+              <% end %>
+            </li>
+            <li><strong>Price:</strong><%= flat.price%></li>
+          </ul>
+          <p><%= link_to "Consulter ce logement", flat_path(flat), class:"btn btn-primary" %></p>
         </div>
       </div>
     </div>
-    <% end %>
   </div>
+  <% end %>
+</div>
 </div>
 
 <div id="map" style="width: 100%; height: 400px;"></div>
