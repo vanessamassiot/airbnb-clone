@@ -1,5 +1,15 @@
+<div class="banner text-center" style="background-image: url('https://unsplash.it/1000/500?image=10')">
+  <div class="banner-gradient"></div>
+  <div class="banner-content">
+    <h1>Gagne du blé maintenant</h1>
+  </div>
+</div>
 
-<h1> Add a new Flat </h1>
+<div class="container">
+  <div class="home">
+    <div class="row">
+      <h2>Es-tu prêt à déguster ta Kronembourg</h2>
+    </div>
 
 
 <%= simple_form_for [:account, @flat], html: {class: 'form'} do |f| %>
@@ -12,5 +22,7 @@
   <%= f.input :price %>
   <%= f.input :picture %>
 
-  <%= f.submit "enregistrer", class: "form-actions" %>
+  <%= f.submit "enregistrer", class: "btn btn-primary" %>
 <% end %>
+
+</div>
