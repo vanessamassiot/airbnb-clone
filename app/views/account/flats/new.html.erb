@@ -1,7 +1,8 @@
+
 <h1> Add a new Flat </h1>
 
 
-<%= simple_form_for [:account, @flat] do |f| %>
+<%= simple_form_for [:account, @flat], html: {class: 'form'} do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :beds %>
@@ -10,5 +11,8 @@
   <%= f.input :postcode %>
   <%= f.input :price %>
   <%= f.input :picture %>
-  <%= f.submit "enregistrer" %>
+
+    <%= f.submit "enregistrer", class: "form-actions" %>
+
 <% end %>
+

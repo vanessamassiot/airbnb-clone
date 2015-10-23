@@ -53,6 +53,26 @@
     border-bottom: 2px solid white
 }
 
+.form-group > .input > textarea {
+  background-color: rgba(50, 50, 50, 0);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 4%;
+  border-bottom: 1px solid #969696
+}
+.form-group > .input > textarea:focus{
+    outline: 0
+}
+
+.form-group > .input > textarea:hover{
+    border-bottom: 2px solid white
+}
+
+.form-group > .input > textarea:focus{
+    border-bottom: 2px solid white
+}
+
 .logo-to-hide{
   position: relative;
   width : 220px;
