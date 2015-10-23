@@ -1,5 +1,21 @@
-<%= simple_form_for [@flat, @booking] do|f| %>
-  <%= f.input :checkin, as: :date, html5: true %>
-  <%= f.input :checkout, as: :date, html5: true %>
-  <%= f.submit%>
-<%end%>
+<div class="banner text-center" style="background-image: url('https://unsplash.it/1000/500?image=10')">
+  <div class="banner-gradient"></div>
+  <div class="banner-content">
+    <h1>Book the flat now !</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="home">
+    <div class="row">
+      <h2>Sorry but the developper of this page doesn't speak french</h2>
+    </div>
+    <%= simple_form_for [@flat, @booking] do|f| %>
+      <%= f.input :checkin, as: :date, html5: true %>
+      <%= f.input :checkout, as: :date, html5: true %>
+      <div style= "display:flex;justify-content:center;align-items:center;">
+        <%= f.submit class:"btn btn-primary"%>
+      </div>
+    <%end%>
+  </div>
+</div>
