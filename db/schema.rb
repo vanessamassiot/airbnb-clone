@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022105013) do
+ActiveRecord::Schema.define(version: 20151023122555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,11 +38,15 @@ ActiveRecord::Schema.define(version: 20151022105013) do
     t.string   "postcode"
     t.integer  "price"
     t.integer  "owner_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.float    "latitude"
     t.float    "longitude"
     t.string   "full_adress"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "flats", ["owner_id"], name: "index_flats_on_owner_id", using: :btree
