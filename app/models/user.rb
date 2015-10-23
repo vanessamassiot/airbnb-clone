@@ -12,8 +12,6 @@ class User < ActiveRecord::Base
   after_create :send_welcome_email
 
   validates :name, presence: true
-  validates :email, presence: true, uniqueness: true, format: { with: /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/,
-    message: "email non valide" }
 
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
