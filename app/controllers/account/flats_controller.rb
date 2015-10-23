@@ -26,7 +26,7 @@ module Account
     private
 
     def flat_params
-      params.require(:flat).permit(:title, :description, :beds, :street, :city, :postcode, :price)
+      params.require(:flat).permit(:title, :description, :beds, :street, :city, :postcode, :price, :picture)
     end
   end
 end
